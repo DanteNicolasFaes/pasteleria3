@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22.13.0"
+    "node": "22.x"
   },
   "scripts": {
     "install:ci": "node scripts/install-ci.mjs",
-    "dev": "node scripts/sites-env.mjs -- vite",
-    "build": "node scripts/build-verified.mjs",
-    "start": "node scripts/sites-env.mjs -- vinext start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dev:sites": "node scripts/sites-env.mjs -- vite",
+    "build:sites": "node scripts/build-verified.mjs",
+    "start:sites": "node scripts/sites-env.mjs -- vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "validate:artifact": "node scripts/validate-artifact.mjs",
     "lint": "node scripts/sites-env.mjs -- eslint . --ignore-pattern dist --ignore-pattern .next",
